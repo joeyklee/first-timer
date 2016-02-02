@@ -7,8 +7,6 @@ var path = require("path");
 
 var mongojs = require('mongojs');
 
-// var mongoose = require("mongoose"); // The reason for this demo.
-
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.  
 var MONGOCONNECTION = 
@@ -17,23 +15,6 @@ var MONGOCONNECTION =
   'mongodb://localhost:27017/co2webdb';
 var db = mongojs(MONGOCONNECTION);
 
-// // Makes connection asynchronously.  Mongoose will queue up database
-// // operations and release them when the connection is complete.
-// mongoose.connect(uristring, function (err, res) {
-//   if (err) { 
-//     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-//   } else {
-//     console.log ('Succeeded connected to: ' + uristring);
-//   }
-// });
-// var db = mongoose.connection;
-
-// db.on('error', function (err) {
-// console.log('connection error', err);
-// });
-// db.once('open', function () {
-// console.log('connected.');
-// });
 
 function mongoError(res, err) {
     if (err) console.error('mongo error ->', err);
